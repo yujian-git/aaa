@@ -1,0 +1,2 @@
+本包下的程序主要练习了自己通过dom4j来实现applicationcontext.xml
+的解析，并实现IoC

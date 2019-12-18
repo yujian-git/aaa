@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 通过构造器产生实例 -->
+<!-- <bean id="user1" class="com.woniu.a_test.User" scope="singleton"></bean>
+<bean id="user2" class="com.woniu.a_test.User" scope="prototype"></bean> -->
+
+
+<!-- 通过静态工厂产生实例 -->
+<!-- <bean id="user3" class="com.woniu.b_test.UserFactory" factory-method="getUser"></bean> -->
+
+
+<!-- 通过实例工厂产生实例 -->
+<!-- 先实例化工厂 -->
+<bean id="ft"  class="com.woniu.b_test.UserFactory2" scope="singleton"></bean>
+<bean id="user4" factory-bean="ft" factory-method="getUser"></bean>
+
+</beans>

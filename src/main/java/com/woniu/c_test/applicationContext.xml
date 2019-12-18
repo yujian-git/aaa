@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	练习依赖注入
+	1、构造器
+	2、setter注入
+ -->
+
+<!-- 
+	1、构造器注入：要求必须声明对应的构造器
+ -->
+ 
+<!-- 1.1 构造器单值注入 -->
+<!-- <bean name="t11" class="com.woniu.c_test.User">
+	<constructor-arg name="user_name" value="周杰伦"></constructor-arg>
+</bean> -->
+
+<!-- 1.2 构造器双值注入 -->
+<!-- <bean name="t12" class="com.woniu.c_test.User">
+	<constructor-arg name="user_name" value="周杰伦"></constructor-arg>
+	<constructor-arg name="user_role" value="歌手"></constructor-arg>
+</bean> -->
+
+<!-- 1.3 含有实体的构造器注入 -->
+<!-- <bean name="t13" class="com.woniu.c_test.User">
+	<constructor-arg name="user_name" value="周杰伦"></constructor-arg>
+	<constructor-arg name="user_role" value="歌手"></constructor-arg>
+	<constructor-arg name="level" ref="t131"></constructor-arg>
+</bean>
+<bean name="t131" class="com.woniu.c_test.Level">
+	<constructor-arg name="level_id" value="1"></constructor-arg>
+	<constructor-arg name="level_name" value="黄金唱将"></constructor-arg>
+</bean> -->
+
+<!-- 
+	2、setter方法注入:在pojo中声明setter方法
+ -->
+ 
+<!-- 2.1、按照名称注入 -->
+<!-- <bean name="t21" class="com.woniu.c_test.User">
+	<property name="user_name" value="周杰伦"></property>
+	<property name="user_role" value="歌手"></property>
+</bean> -->
+ 
+<!-- 2.2、setter对象注入 -->
+<!-- <bean name="t22" class="com.woniu.c_test.User">
+	<property name="user_name" value="周杰伦"></property>
+	<property name="user_role" value="歌手"></property>
+	<property name="level" ref="t221"></property>
+</bean>
+<bean name="t221" class="com.woniu.c_test.Level">
+	<property name="level_id" value="12"></property>
+	<property name="level_name" value="黄金歌手"></property>
+</bean> -->
+
+<!-- 2.3、命名空间c构造器注入 -->
+<!-- <bean name="t23" class="com.woniu.c_test.User" c:user_name="梁静茹" c:user_role="歌手" c:level="t231"></bean>
+<bean name="t231" class="com.woniu.c_test.Level" c:level_id="1" c:level_name="黄金歌手"></bean> -->
+
+<!-- 2.4、命名空间setter属性注入 -->
+<!-- <bean name="t24" class="com.woniu.c_test.User" p:user_name="梁朝伟" p:user_role="演员" p:level-ref="t241"></bean>
+<bean name="t241" class="com.woniu.c_test.Level" c:level_id="1" c:level_name="大陆演员"></bean> -->
+
+<!-- 
+	3、数组和集合注入练习
+ -->
+ <!-- 3.1、数组注入练习 -->
+<!-- <bean name="t31" class="com.woniu.c_test.User">
+	<property name="goodFriends">
+		<array>
+			<value>周润发</value>
+			<value>成龙</value>
+			<value>周俊杰</value>
+		</array>
+	</property>
+</bean>
+</beans> -->
+
+<!-- 3.2、List集合注入 -->
+<bean name="t32" class="com.woniu.c_test.User">
+	<property name="boyFriends">
+		<list>
+			<value>周润发</value>
+			<value>成龙</value>
+			<value>周俊杰</value>
+		</list>
+	</property>
+</bean>
+
+<!-- 3.3、Set集合注入 -->
+<!-- <bean name="t33" class="com.woniu.c_test.User">
+	<property name="girlFriends">
+		<set>
+			<value>梁静茹</value>
+			<value>赵薇</value>
+			<value>蔡依林</value>
+			<value>蔡依林</value>
+		</set>
+	</property>
+</bean> -->
+
+
+<!-- 3.4、Map集合注入 -->
+<!-- <bean name="t34" class="com.woniu.c_test.User">
+	<property name="singers">
+		<map>
+			<entry key="梁静茹" value="一级歌手"></entry>
+			<entry key="张柏芝" value="二级歌手"></entry>
+			<entry key="赵薇" value="三级歌手"></entry>
+		</map>
+	</property>
+</bean> -->
+
+<!-- 3.5、properties集合注入 -->
+<bean name="t35" class="com.woniu.c_test.User">
+	<property name="properties">
+		<props>
+			<prop key="username">root</prop>
+			<prop key="password">123456</prop>
+		</props>
+	</property>
+</bean>
+
+
+
+</beans>
